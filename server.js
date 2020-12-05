@@ -1,9 +1,21 @@
 import express from 'express'
+import connectDB from './config/db.js'
+import dotenv from 'dotenv'
+
+// to start the server type in terminal npm run dev
+
+dotenv.config()
+
+connectDB()
 
 const app = express()
 
 app.get('/', (req, res) => {
-    res.send('API is running...')
+  res.send('API is running...')
 })
 
-app.listen(9000, console.log('Server is running on port 9000'))
+const PORT = process.env.PORT || 9000
+app.listen(
+  PORT,
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+)
