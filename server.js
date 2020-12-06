@@ -1,6 +1,7 @@
 import express from 'express'
 import connectDB from './config/db.js'
 import dotenv from 'dotenv'
+import userRoutes from './routes/userRoutes.js'
 
 // to start the server type in terminal npm run dev
 
@@ -10,9 +11,14 @@ connectDB()
 
 const app = express()
 
+// Allowed JSON Data in the request body
+app.use(express.json())
+
 app.get('/', (req, res) => {
-  res.send('API is running...')
+  res.send('Done Deals API is running...')
 })
+
+app.use('/api/users', userRoutes)
 
 const PORT = process.env.PORT || 9000
 app.listen(
