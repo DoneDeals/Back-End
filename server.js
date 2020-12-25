@@ -2,6 +2,7 @@ import express from 'express'
 import connectDB from './config/db.js'
 import dotenv from 'dotenv'
 import userRoutes from './routes/userRoutes.js'
+import itemRoutes from './routes/itemRoutes.js'
 
 // to start the server type in terminal npm run dev
 
