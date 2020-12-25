@@ -5,7 +5,7 @@ const itemSchema = mongoose.Schema(
   {
     category: { type: String, required: true },
     description: { type: String, required: true, unique: true },
-    unitPrice: { type: Decimal128, required: true },
+    unitPrice: { type: Number, required: true },
   },
   { timestamps: true }
 )
