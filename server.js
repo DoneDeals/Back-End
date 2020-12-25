@@ -20,6 +20,8 @@ app.get('/', (req, res) => {
 
 app.use('/api/users', userRoutes)
 
+app.use('/api/items', itemRoutes);
+
 const PORT = process.env.PORT || 9000
 app.listen(
   PORT,
