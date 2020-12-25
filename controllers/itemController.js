@@ -1,4 +1,4 @@
-import User from '../models/userModel.js'
+import Item from '../models/itemModel.js'
 import generateToken from '../utils/generateToken.js'
 
 
