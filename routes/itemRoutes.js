@@ -6,4 +6,8 @@ const router = express.Router();
 
 router.route('/').post(addItem);
 
+router
+  .route('/')
+  .get(protect, getUserProfile)
+
 export default router

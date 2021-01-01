@@ -33,3 +33,24 @@ export async function addItem(req, res) {
   }
 }
 
+// @desc    Get Item details
+// @route   GET /api/items/
+// @access  Private
+export async function getItemDetails(req, res) {
+  try {
+    const item = await Item.findById(req.item._id)
+
+    if (item) {
+      res.json({
+        _id: item._id,
+        category: item.category,
+        description: item.description,
+        unitPrice: item.unitPrice,
+      });
+    } else {
+      res.status(404).json({ message: 'Item not found' })
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
