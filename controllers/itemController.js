@@ -41,13 +41,9 @@ export async function getItemFromDocuments(req, res) {
 //    const item = await Item.findById(req.item._id);
     const item = await Item.find();
 
-console.log('item: ', item);
     if (item) {
       res.json({
-        _id: item._id,
-        category: item.category,
-        description: item.description,
-        unitPrice: item.unitPrice,
+          data: item,
       });
     } else {
       res.status(404).json({ message: 'Item not found' })
