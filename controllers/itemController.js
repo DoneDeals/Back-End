@@ -36,10 +36,12 @@ export async function addItem(req, res) {
 // @desc    Get Item details
 // @route   GET /api/items/
 // @access  Private
-export async function getItemDetails(req, res) {
+export async function getItemFromDocuments(req, res) {
   try {
-    const item = await Item.findById(req.item._id)
+//    const item = await Item.findById(req.item._id);
+    const item = await Item.find();
 
+console.log('item: ', item);
     if (item) {
       res.json({
         _id: item._id,
