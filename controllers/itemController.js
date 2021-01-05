@@ -38,7 +38,6 @@ export async function addItem(req, res) {
 // @access  Private
 export async function getItemFromDocuments(req, res) {
   try {
-//    const item = await Item.findById(req.item._id);
     const item = await Item.find();
 
     if (item) {
